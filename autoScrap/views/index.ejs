@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="javascripts/require.js"></script>
+  </head>
+  <script>
+
+    setTimeout(function () {
+      window.location.reload(1);
+    }, 60000);
+    /*
+      const fs = require('fs');
+      // const oldcontent = fs.readFileSync('./tesTfile.txt');
+
+      let btc = document.getElementById('btcusd').textContent;
+      
+      const writeToFile = async (path, data) => {
+          let filehandle = null;
+          try {
+              filehandle = await fs.promises.open(path, mode = 'w');
+              await filehandle.writeFile(data);
+          } finally {
+              if (filehandle) {
+                  await filehandle.close();
+              }
+          }
+      };
+
+      if (document.cookie == '') {
+        document.cookie = btc;
+        console.log(document.cookie);
+        fs.appendFileSync('public/file.txt', btc + '\n');
+      }
+      else {
+        if (btc == document.cookie) {
+          fs.appendFileSync('public/file.txt', btc + '\n');
+        }
+      }
+    */
+  </script>
+  <body>
+    <h1><%= title %></h1>
+    <p>
+      <table>
+        <% for(var i = 0; i < currencies.length; i=i+2) { %>
+        <tr>
+          <th style="text-transform: uppercase"><%= currencies[i+1] %></th>
+          <th id=<%= currencies[i+1] %>><%= currencies[i] %></th>
+        </tr>
+        <% } %>
+      </table>
+    </p>
+    <iframe src="../file.txt"></iframe> 
+  </body>
+</html>
