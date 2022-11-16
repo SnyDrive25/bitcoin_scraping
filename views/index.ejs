@@ -9,36 +9,7 @@
 
     setTimeout(function () {
       window.location.reload(1);
-    }, 5000);
-    /*
-      const fs = require('fs');
-      // const oldcontent = fs.readFileSync('./tesTfile.txt');
-
-      let btc = document.getElementById('btcusd').textContent;
-      
-      const writeToFile = async (path, data) => {
-          let filehandle = null;
-          try {
-              filehandle = await fs.promises.open(path, mode = 'w');
-              await filehandle.writeFile(data);
-          } finally {
-              if (filehandle) {
-                  await filehandle.close();
-              }
-          }
-      };
-
-      if (document.cookie == '') {
-        document.cookie = btc;
-        console.log(document.cookie);
-        fs.appendFileSync('public/file.txt', btc + '\n');
-      }
-      else {
-        if (btc == document.cookie) {
-          fs.appendFileSync('public/file.txt', btc + '\n');
-        }
-      }
-    */
+    }, 60000);
   </script>
   <body>
     <h1><%= title %></h1>
