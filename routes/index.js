@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
   var date = '[' + today.getDay() + '/' + today.getMonth() + '/' + today.getFullYear() + ' | ' + today.getHours() + ':' + today.getMinutes() + ']';
   
   fs.appendFileSync('public/file.txt', date + ' ' + btcusd + '\n');
-
+  
   res.render('index', { title: 'AutoScrap', currencies: [btcusd, 'btcusd', ethusd, 'ethusd', bnbusd, 'bnbusd'] });
 });
 
