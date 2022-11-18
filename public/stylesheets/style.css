@@ -63,7 +63,7 @@ iframe {
   background-color: transparent;
   font-size: 2em;
   color: ghostwhite;
-  filter: invert(1);
+  filter: invert(1) contrast(3) brightness(2) grayscale(1);
 }
 
 button {
