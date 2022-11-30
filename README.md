@@ -50,3 +50,5 @@ curl -X POST https://api.airtable.com/v0/appJ36ZyaFH4MXA96/Table%201 -H "Authori
 Cela me permet d'avoir un graphique représentant l'historique des valeurs du bitcoin par intervalles de 15 minutes sur la periode que je souhaite.
 
 ![image](https://user-images.githubusercontent.com/74963340/204913888-9e9f73c7-f283-40bd-a9a1-309009001571.png)
+
+![image](https://user-images.githubusercontent.com/74963340/204913888-9e9f73c7-f283-40bd-a9a1-309009001571.png)
