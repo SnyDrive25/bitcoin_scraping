@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const shell = require('shelljs');
 var fs = require('fs');
-//var Airtable = require('airtable');
+var Airtable = require('airtable');
 
 router.get('/', function(req, res, next) {
   var btcusd = shell.exec(`curl https://markets.businessinsider.com/currencies/btc-usd | grep -oP '(?<=<span class="price-section__current-value">).*(?=</span>)'`);
@@ -14,26 +14,25 @@ router.get('/', function(req, res, next) {
   
   fs.appendFileSync('public/file.txt', date + ' ' + btcusd + '\n');
   
-  /*
   var base = new Airtable({apiKey: 'keyZAgEqSGNdXIWLd'}).base('appJ36ZyaFH4MXA96');
-  
-  var output = [];
 
+  let data = [];
+  
   base('Table 1').select({
-      maxRecords: 3,
-      view: "Grid view"
+    maxRecords: 8,
+    view: "Grid view"
   }).eachPage(function page(records, fetchNextPage) {
-      records.forEach(function(record) {
-          output.push(record.get('value') + "\n");
-      });
-      fetchNextPage();
-  
+  records.forEach(function(record) {
+        data.push(record.get('value'));
+    });
+  fetchNextPage();
   }, function done(err) {
-      if (err) { console.error(err); return; }
+    if (err) { console.error(err); return; }
   });
-  */
 
-  res.render('index', { title: 'AutoScrap', currencies: [btcusd, 'btcusd'/*, ethusd, 'ethusd', bnbusd, 'bnbusd'*/], /*base: output*/ });
+  console.log("data : ", data);
+
+  res.render('index', { title: 'AutoScrap', currencies: [btcusd, 'btcusd'/*, ethusd, 'ethusd', bnbusd, 'bnbusd'*/], base: data});
 });
 
 function curl(url) {

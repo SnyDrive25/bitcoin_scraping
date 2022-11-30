@@ -1,5 +1,9 @@
 body {
-  padding: 50px;
+  overflow-x: hidden;
+  padding: 0px;
+  margin: 0;
+  padding-left: 50px;
+  padding-right: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #000;
 }
@@ -9,7 +13,7 @@ a, p, span {
 }
 
 h1, h2 {
-  color: #00B7FF;
+  color: rgb(99, 99, 250);
 }
 
 h1 {
@@ -38,7 +42,7 @@ th {
 }
 
 tr:hover {
-  background-color: goldenrod!important;
+  background-color: rgb(99, 99, 250)!important;
   filter: brightness(.9);
 }
 
@@ -56,14 +60,26 @@ tr:nth-child(even) {
   user-select: all;
 }
 
+@media only screen and (min-width: 1250px) {
+  iframe {
+    width: 60%;
+    margin-left: 20%;
+  }
+}
+
+@media only screen and (max-width: 1249px) {
+  iframe {
+    width: 100%;
+  }
+}
+
 iframe {
-  width: 100%;
-  min-height: 400px;
+  height: 50vh;
   border: none;
   background-color: transparent;
   font-size: 2em;
   color: ghostwhite;
-  filter: invert(1) contrast(3) brightness(2) grayscale(1);
+  filter: invert(1) contrast(10) saturate(0);
 }
 
 button {
@@ -75,7 +91,7 @@ button {
   border-radius: 17px;
   padding: 9px;
   font-size: 2em;
-  background-color: #00B7FF;
+  background-color: rgb(99, 99, 250);
   box-shadow: 0 0 .4em #444;
 }
 button:hover {
