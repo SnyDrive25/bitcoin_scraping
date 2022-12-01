@@ -12,7 +12,7 @@ curl https://markets.businessinsider.com/currencies/btc-usd | grep -oP '(?<=<spa
 
 Connexion en ssh au serveur distant et création d'un script (scrap.sh) est lancé le 'curl' ainsi que l'envoie des données sur Telegram, le stockage des données étant déjà effectué dans le Node JS.
 
-Contenu de scrap.sh permettant l'envoi de notifications sur messenger :
+Contenu de scrap.sh permettant l'envoi de notifications sur Telegram :
 
 ```bash
 #! /bin/bash
